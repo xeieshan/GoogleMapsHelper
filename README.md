@@ -326,9 +326,9 @@ CLLocationCoordinate2D stamfordBridge = { 51.481690, -0.190999 };
 
 # Make sure you integrate AFNetworking, SVProgressHUD, SVHTTPClient
 I was using CocoaPods so I used
-> pod 'SVHTTPRequest', '~> 0.5'
-> pod 'AFNetworking', '~> 3.0'
-> pod 'SVProgressHUD'
+> - pod 'SVHTTPRequest', '~> 0.5'
+> - pod 'AFNetworking', '~> 3.0'
+> - pod 'SVProgressHUD'
 
 Dont forget to add condition in info.plist
 - App Transport > Arbitrary loads allow : YES
