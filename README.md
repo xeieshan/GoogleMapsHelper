@@ -3,12 +3,14 @@
 A GOOGLE MAPS Helper that help you do multiple tasks like
 
 ## 1- Geocode
-It returns all these items : (MOGoogleGeocodeList *googleGeoCodeList, SPGoogleGeoCoderResponse responseCode, NSString *message) 
+It returns all these items : 
+- MOGoogleGeocodeList *googleGeoCodeList, 
+- SPGoogleGeoCoderResponse responseCode, 
+- NSString *message
 
 I Geocode @"Arsenal Emirates" and I got
 Printing description of googleGeoCodeList->_results->[0]:
-{
-    "formatted_address" = "Hornsey Rd, London N7 7AJ, UK";
+> {   "formatted_address" = "Hornsey Rd, London N7 7AJ, UK";
     geometry =     {
         bounds =         {
         };
@@ -85,10 +87,14 @@ Printing description of googleGeoCodeList->_results->[0]:
 
 
 ## 2- Reverse Geocode
-It returns all these items : (MOGoogleGeocodeList *googleGeoCodeList, SPGoogleGeoCoderResponse responseCode, NSString *message)
+It returns all these items : 
+- MOGoogleGeocodeList *googleGeoCodeList, 
+- SPGoogleGeoCoderResponse responseCode, 
+- NSString *message
+
 Printing description for first item : 
-<__NSArrayI 0x6080000b1b20>(
-{
+> <__NSArrayI 0x6080000b1b20>(
+> {
     "formatted_address" = "Emirates Stadium, London, UK";
     geometry =     {
         bounds =         {
@@ -174,10 +180,14 @@ Printing description for first item :
 
 
 ## 3- Autocomplete
-It Returns all of these items : (MOGoogleAutoCompleteList *googleAutocompleteList, SPGoogleGeoCoderResponse responseCode, NSString *message)
+It Returns all of these items : 
+- MOGoogleAutoCompleteList *googleAutocompleteList, 
+- SPGoogleGeoCoderResponse responseCode, 
+- NSString *message
+- 
 I wanted to search @"Arsenal Emirates Stadium, london"  and I got following 2 results, I am showing first item
-Printing description of ((MOPredictions *)0x0000600000282b70):
-{
+> Printing description of ((MOPredictions *)0x0000600000282b70):
+> {
     description = "Arsenal Football Club, Emirates Stadium, Hornsey Road, London, United Kingdom";
     id = 695fdbc199ef136a3674dc5c3946d0901be24cf2;
     kMOPredictionsMatchedSubstrings =     (
@@ -224,44 +234,53 @@ Printing description of ((MOPredictions *)0x0000600000282b70):
 }
 
 ## 4- Directions 
-It Returns All these Items : (MKPolyline *polyLine, NSString *distance, NSString *duration, NSString *startAddress, NSString *endAddress, NSMutableArray *polyLineSetArray, NSMutableArray *directionsSetArray, NSMutableArray *distanceSetArray) in a block.
-I found directions between following CLLocationCoordinate2D's
+It Returns All these Items : 
+- MKPolyline *polyLine, 
+- NSString *distance, 
+- NSString *duration, 
+- NSString *startAddress, 
+- NSString *endAddress, 
+- NSMutableArray *polyLineSetArray, 
+- NSMutableArray *directionsSetArray, 
+- NSMutableArray *distanceSetArray 
+in a block.
+> I found directions between following CLLocationCoordinate2D's
 CLLocationCoordinate2D emiratesStadium = { 51.555747, -0.108309};
 CLLocationCoordinate2D stamfordBridge = { 51.481690, -0.190999 };
 
-### Printing description of duration:
-42 mins
+> ### Printing description of duration:
+> 42 mins
 ### Printing description of distance:
-16.6 km
+> 16.6 km
 ### Printing description of startAddress:
-Citizen Rd, London N7, UK
+> Citizen Rd, London N7, UK
 ### Printing description of endAddress:
-19 Billing Pl, London SW10 9UN, UK
+> 19 Billing Pl, London SW10 9UN, UK
 ### Plus Polyline object to be used in MKMapView
-It also tells you Guidance strings which you can use :
-Head southwest on Citizen Rd toward Hornsey Rd/A103,
-Turn right onto Hornsey Rd/A103,
-Turn left onto Tollington Rd/A503Continue to follow A503,
-Continue straight onto Camden Rd/A503,
-Turn left onto Camden St/A400Continue to follow A400,
-Turn left onto Hampstead Rd/A400Continue to follow A400,
-Turn right onto Euston Rd,
-Merge onto Euston Rd/A501 via the ramp to Ring Road/A41/A40/KilburnContinue to follow A501,
-Keep right to continue on Marylebone Flyover/A40Continue to follow A40,
-Take the A3220 ramp to Hammersmith/Shepherd's Bush/White City/Earls Court,
-At the roundabout, take the 1st exit onto W Cross Rte/A3220,
-At the roundabout, take the 2nd exit onto Holland Rd/A3220Continue to follow A3220,
-Keep right to continue on Warwick Gardens/A3220,
-Turn left onto Pembroke Rd/A3220Continue to follow A3220,
-Continue straight onto Earls Ct Rd/A3220Continue to follow A3220,
-Turn right onto Fulham Rd/A308Continue to follow Fulham Rd,
-Turn right,
-Turn right,
-Turn left
-Destination will be on the left
+> It also tells you Guidance strings which you can use :
+> - Head southwest on Citizen Rd toward Hornsey Rd/A103,
+> - Turn right onto Hornsey Rd/A103,
+> - Turn left onto Tollington Rd/A503Continue to follow A503,
+> - Continue straight onto Camden Rd/A503,
+> - Turn left onto Camden St/A400Continue to follow A400,
+> - Turn left onto Hampstead Rd/A400Continue to follow A400,
+> - Turn right onto Euston Rd,
+> - Merge onto Euston Rd/A501 via the ramp to Ring Road/A41/A40/KilburnContinue to follow A501,
+> - Keep right to continue on Marylebone Flyover/A40Continue to follow A40,
+> - Take the A3220 ramp to Hammersmith/Shepherd's Bush/White City/Earls Court,
+> - At the roundabout, take the 1st exit onto W Cross Rte/A3220,
+> - At the roundabout, take the 2nd exit onto Holland Rd/A3220Continue to follow A3220,
+> - Keep right to continue on Warwick Gardens/A3220,
+> - Turn left onto Pembroke Rd/A3220Continue to follow A3220,
+> - Continue straight onto Earls Ct Rd/A3220Continue to follow A3220,
+> - Turn right onto Fulham Rd/A308Continue to follow Fulham Rd,
+> - Turn right,
+> - Turn right,
+> - Turn left
+> - Destination will be on the left
 
 # Make sure you integrate AFNetworking, SVProgressHUD, SVHTTPClient
 I was using CocoaPods so I used
-pod 'SVHTTPRequest', '~> 0.5'
-pod 'AFNetworking', '~> 3.0'
-pod 'SVProgressHUD'
+> pod 'SVHTTPRequest', '~> 0.5'
+> pod 'AFNetworking', '~> 3.0'
+> pod 'SVProgressHUD'
