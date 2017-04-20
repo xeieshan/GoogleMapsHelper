@@ -329,3 +329,6 @@ I was using CocoaPods so I used
 > pod 'SVHTTPRequest', '~> 0.5'
 > pod 'AFNetworking', '~> 3.0'
 > pod 'SVProgressHUD'
+
+Dont forget to add condition in info.plist
+- App Transport > Arbitrary loads allow : YES
