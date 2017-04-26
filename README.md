@@ -1,4 +1,5 @@
 # GoogleMapsHelper
+>> Read Me in Russian : http://gargo.of.by/googlemapshelper/
 
 A GOOGLE MAPS Helper that help you do multiple tasks like
 
